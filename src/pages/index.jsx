@@ -8,7 +8,7 @@ import Contacts from '../components/Contacts';
 import LazyShow from '../components/LazyShow';
 // import MainHero from '../components/MainHero';
 import Services from '../components/Services';
-import Team from '../components/Team';
+// import Team from '../components/Team';
 import 'aos/dist/aos.css';
 // import Font Awesome CSS
 import '@fortawesome/fontawesome-svg-core/styles.css';
