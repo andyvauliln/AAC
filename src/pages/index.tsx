@@ -25,18 +25,22 @@ const App = () => {
     AOS.init();
   });
   return (
-    <div className='w-full h-full' >
+    <div className='w-full h-full bg-black' >
       <MainHero />
-      {/* <LazyShow>
-        <Services />
-      </LazyShow>
+      {/*
       <LazyShow>
         <Team />
       </LazyShow>
+       */}
+      <div className='hidden md:flex'>
+      <LazyShow>
+          <Services />
+      </LazyShow>
+      </div>
       <LazyShow>
         <Contacts />
       </LazyShow>
-      <Analytics /> */}
+      <Analytics />
     </div>
   );
 };

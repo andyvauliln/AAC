@@ -4,9 +4,8 @@ import StarsAnimation from './StarsAnimation'; // Import the StarsAnimation comp
 
 const Contacts = () => {
   return (
-    <section className="mast py-8 h-[100vh]" id="product">
+    <section className="mast h-[100vh] md:h-[100vh]" id="product">
       <StarsAnimation />
-      <figure className="mast__bg"></figure>
       <div className="eightball-shadow center2"></div>
       <div className="eightball center2">
         <div className="inner-circle center2">

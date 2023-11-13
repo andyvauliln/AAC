@@ -27,6 +27,29 @@ a:hover {
   @apply my-6;
 }
 
+.background-animate {
+  background-size: 400%;
+
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+}
+
+@keyframes AnimationName {
+
+  25%,
+  75% {
+    background-position: 50% 50%;
+  }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+}
 
 /* ************* SLIDER ***************** */
 
@@ -286,21 +309,19 @@ a:hover {
 
 .stars {
   font-family: "Bebas Neue", Arial Helvetica, serif;
-	/* -webkit-text-stroke: 0px #0000004f; */
-	/* -webkit-text-fill-color: #ffffff1c; */
+
+
   cursor: pointer;
-	/* text-shadow: -3px -3px 3px #00000040; */
+
 	background-repeat: repeat;
 	background-position: center center;
 	background-size: contain;
-	/* -webkit-text-fill-color: #002e422e; */
 	-webkit-background-clip: text;
 	font-weight: bold;
 
-	background-image: url("/images/text_animation_2.gif");
+	background-image: url("https://64.media.tumblr.com/c3b3cd6883925960057b43c187c70377/88a661889eb1d588-a4/s500x750/04ee5a55911284caf626c9eb26013621ef4195ea.gif");
 	-webkit-text-fill-color: #00189d33;
-	/* text-shadow: -3px -3px 10px #4027b030, 3px 3px 10px #00080c42,
-		0px 0px 10px #00000080; */
+
 }
 
 @supports (-webkit-background-clip: text) {
@@ -1497,7 +1518,7 @@ a:hover {
 .eightball-shadow {
   height: 40vw;
   width: 40vw;
-  box-shadow: -1em 1em 11em #FFDF00;
+  box-shadow: -1em 1em 11em #743fce;
   border-radius: 50%;
   transform: none;
 }
@@ -1525,7 +1546,7 @@ a:hover {
   height: 0;
   border-left: 6.5vw solid transparent;
   border-right: 6.5vw solid transparent;
-  border-top: 9.75vw solid #FFDF00;
+  border-top: 9.75vw solid #bf3fce;
   top: 60% !important;
   filter: blur(5px);
 }
@@ -1601,7 +1622,7 @@ a:hover {
   .triangle {
     border-left: 19vw solid transparent;
     border-right: 19vw solid transparent;
-    border-top: 27vw solid #FFDF00;
+    border-top: 27vw solid #bf3fce;
   }
 
   .mirror {

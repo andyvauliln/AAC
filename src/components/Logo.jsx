@@ -7,8 +7,12 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 
+
+
+
+
 const ThreeScene = () => {
-    const mountRef = useRef(null);
+    const canvasRef = useRef(null);
 
     useEffect(() => {
         // Define your shaders here
@@ -29,10 +33,7 @@ const ThreeScene = () => {
         void main() {
           gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
         }
-      `;
-      
-     
-      
+      `;    
       const noiseFS = `
       vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
       vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
@@ -174,21 +175,22 @@ const ThreeScene = () => {
       
       // const width = mountRef.current.clientWidth;
       // const height = mountRef.current.clientHeight;
-      const mount = mountRef.current;
-      console.log(mount.offsetWidth, "mount.offsetWidth")
-      console.log(mount.offsetHeight, "mount.offsetHeight")
+      const canvas = canvasRef.current;
+      const width = canvas.offsetWidth; // Example width
+      const height = canvas.offsetHeight;
 
       let scene = new THREE.Scene();
       scene.background = null;
-      let camera = new THREE.PerspectiveCamera(120, (mountRef.current.clientWidth / mountRef.current.clientHeight), 1, 1000);
+      let camera = new THREE.PerspectiveCamera(calculateFoV(window.innerWidth), (width / height), 1, 1000);
+      //let camera = new THREE.PerspectiveCamera(calculateFoV(window.innerWidth), (width / height), 1, 1000);
       camera.position.set(0, 0, 10);
 
-      let renderer = new THREE.WebGLRenderer({ alpha: true });
+      let renderer = new THREE.WebGLRenderer({ alpha: true, canvas: canvasRef.current });
       renderer.setClearColor(0x000000, 0);
-      renderer.setSize(mount.offsetWidth, mount.offsetHeight);
+      renderer.setSize(width, height);
       renderer.toneMapping = THREE.ReinhardToneMapping;
-      mount.appendChild(renderer.domElement); 
-
+      // mount.appendChild(renderer.domElement);
+      
      
 
       let controls = new OrbitControls(camera, renderer.domElement);
@@ -198,7 +200,6 @@ const ThreeScene = () => {
       controls.autoRotate = true;
       controls.autoRotateSpeed *= 0.25;
       
-      let cubeMap = createCubeMap();
       
       let light = new THREE.DirectionalLight(0xffffff, 1.75);
       light.position.setScalar(1);
@@ -207,7 +208,7 @@ const ThreeScene = () => {
       let globalUniforms = {
         bloom: {value: 0},
         time: {value: 0},
-        aspect: {value: mount.offsetWidth / mount.offsetHeight}
+        aspect: {value: width / height}
       }
       
       // <OBJECT>
@@ -219,7 +220,6 @@ const ThreeScene = () => {
       let m = new THREE.MeshStandardMaterial({
         roughness: 0.125,
         metalness: 0.875,
-        envMap: cubeMap,
         onBeforeCompile: shader => {
           shader.uniforms.bloom = globalUniforms.bloom;
           shader.uniforms.time = globalUniforms.time;
@@ -295,50 +295,22 @@ const ThreeScene = () => {
       });
       let o = new THREE.Mesh(g, m);
       scene.add(o);
-      // </OBJECT>
-
 
     let clock = new THREE.Clock();
+
     renderer.setAnimationLoop(() => {
       let t = clock.getElapsedTime();
       controls.update();
       globalUniforms.time.value = t * 0.1;
       renderer.render(scene, camera);
     });
-
-    function createCubeMap() {
-      let images = [];
-      let c = document.createElement("canvas");
-      c.width = 4;
-      c.height = c.width;
-      let ctx = c.getContext("2d");
-      for (let i = 0; i < 6; i++) {
-          ctx.fillStyle = "#fff";
-          ctx.fillRect(0, 0, c.width, c.height);
-          for (let j = 0; j < (c.width * c.height) / 2; j++) {
-              ctx.fillStyle = Math.random() < 0.5 ? "#a8a9ad" : "#646464";
-              ctx.fillRect(
-                  Math.floor(Math.random() * c.width),
-                  Math.floor(Math.random() * c.height),
-                  2, 1
-              );
-          }
-          images.push(c.toDataURL());
-      }
-      return new THREE.CubeTextureLoader().load(images);
-    }
-
     const onWindowResize = () => {
-      camera.aspect = (mountRef.current.clientWidth / mountRef.current.clientHeight);
+      camera.aspect = (width / height);
+      camera.fov = calculateFoV(window.innerWidth);
       camera.updateProjectionMatrix();
-      renderer.setSize(mount.offsetWidth, mount.offsetHeight);
-      console.log(mount.offsetWidth, mount.offsetHeight, "resize")
-  
-      // Update sizes for postprocessing effects
-      // bloomComposer.setSize(mount.offsetWidth, mount.offsetHeight);
-      // finalComposer.setSize(mount.offsetWidth, mount.offsetHeight);
-  
-      // Update global uniforms if used
+      
+      renderer.setSize(width, height);
+      // console.log(mount.offsetWidth, mount.offsetHeight, "resize")
       globalUniforms.aspect.value = camera.aspect;
     };
     
@@ -346,14 +318,49 @@ const ThreeScene = () => {
 
     return () => {
       window.removeEventListener('resize', onWindowResize);
-      mount.removeChild(renderer.domElement);
-      // scene.dispose();
-      // renderer.dispose();
+      // mount.removeChild(renderer.domElement);
+    //   scene.traverse(object => {
+    //     if (object.isMesh) {
+    //         if (object.geometry) {
+    //             object.geometry.dispose();
+    //         }
+    //         if (object.material) {
+    //             if (object.material.isMaterial) {
+    //                 cleanMaterial(object.material);
+    //             } else if (Array.isArray(object.material)) {
+    //                 // In case of multi-materials
+    //                 object.material.forEach(material => cleanMaterial(material));
+    //             }
+    //         }
+    //     }
+    // });
+
+    renderer.dispose();
   };
 
   }, []);
 
-    return <div ref={mountRef} style={{ width: '100%', height: '100vh' }} />;
+    return <canvas ref={canvasRef} className='z-10 w-[400px] h-[400px]' />;
 };
 
 export default ThreeScene;
+
+function cleanMaterial(material) {
+  material.dispose();
+  // Dispose textures if any
+  for (const key of Object.keys(material)) {
+      const value = material[key];
+      if (value && typeof value === 'object' && 'dispose' in value) {
+          value.dispose();
+      }
+  }
+}
+const calculateFoV = (screenWidth) => {
+  const min_width = 350;
+  const max_width = 1744;
+  const min_fov = 70;
+  const max_fov = 90;
+
+  const clampedWidth = Math.max(min_width, Math.min(max_width, screenWidth));
+  return min_fov + (max_fov - min_fov) * (clampedWidth - min_width) / (max_width - min_width);
+};

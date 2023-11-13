@@ -36,22 +36,22 @@ function LogoSubText() {
   return (
     <>
       {/* <h1 className={`${roboto.className} gold-text2 text-2xl text-center text-yellow-400 mb-20 z-20 absolute left-1/2 -translate-x-1/2 top-[15%]`}>Law Firm & Speakeasy Bar</h1> */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-[3%] text-center ">
+      <div className="text-center mt-6 px-4">
         <Spanizer
           tag="p"
           className={`${roboto2.className} mast__text text-2xl`}
         >
-          Law Firm & Vibe
+        A Place for People Who Value Their Time and Embrace the Future
         </Spanizer>
         <hr className="sep" />
         <Spanizer tag="p" className={`${roboto2.className} mast__text text-md`}>
-          Cotact us when your lawyer says there's no chance.
+          Designing Custom Automation Solutions with AI
         </Spanizer>
         <Spanizer
           tag="p"
-          className={`${roboto2.className} mast__text text-3xl mt-2`}
+          className={`${roboto2.className} mast__text text-3xl mt-8`}
         >
-          +6281338571519
+          Free Consultation (+6281338571519 )
         </Spanizer>
 
         {/* <div className="container social-wrapper">

@@ -4,117 +4,92 @@ import Image from "next/image"
 const Services = () => {
   return (
     <section className={`mast py-8 h-auto md:h-[100vh]`} id="product">
-      <figure
+      {/* <figure
         className="mast__bg hidden md:block"
         style={{
           backgroundImage: 'url(/images/bg4.jpeg)',
         }}
-      ></figure>
-      <div className="flex flex-col  items-center w-full h-full">
-        <div className="stars cursor-pointer underline underline-offset-8 z-10 text-4xl md:text-6xl">
+      ></figure> */}
+      <div className="flex flex-col  items-center justify-center w-full h-full">
+        <div className="stars cursor-pointer underline underline-offset-8 z-10 text-4xl md:text-6xl mb-16">
           Services
         </div>
-
-        <div id="cards">
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-                <Image src="/images/construction.svg" alt="Construction" width="100" height="100"/>
-              </div>
-              <div className="card-info-wrapper">
-                <div className="card-info">
-                  <div className="card-info-title">
-                    <h3>Common</h3>
-                    <h4>Drafting</h4>
-                    <h4>International Law</h4>
-                    <h4>FIDIC</h4>
-                    <h4>IPR</h4>
-                    <h4>Humanitarian Law</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-              <Image src="/images/construction.svg" alt="Construction" width="100" height="100"/>
-              </div>
-              <div className="card-info-wrapper">
-                <div className="card-info">
-                  <div className="card-info-title">
-                    <h3>Visa Managment</h3>
-                    <h4>Creating Social Visa 24f</h4>
-                    <h4>Creating Marrige Visa</h4>
-                    <h4>Dealing with Overstate</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-              <Image src="/images/construction.svg" alt="Construction" width="100" height="100"/>
-              </div>
-              <div className="card-info-wrapper">
-                <div className="card-info">
-                  <div className="card-info-title">
-                    <h3>Consultations</h3>
-                    <h4>10 min free cosultation.</h4>
-                    <h4>1h 50$.</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-              <Image src="/images/construction.svg" alt="Construction" width="100" height="100"/>
-              </div>
-              <div className="card-info-wrapper">
-                <div className="card-info">
-                  <div className="card-info-title">
-                    <h3>IT Legality</h3>
-                    <h4>Making Site Terms</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-              <Image src="/images/construction.svg" alt="Construction" width="100" height="100"/>
-              </div>
-              <div className="card-info-wrapper">
-                <div className="card-info">
-                  <div className="card-info-title">
-                    <h3>Open Company</h3>
-                    <h4>Contract drafting.</h4>
-                    <h4>Shady staff.</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-              <Image src="/images/construction.svg" alt="Construction" width="100" height="100"/>
-              </div>
-              <div className="card-info-wrapper">
-                <div className="card-info">
-                  <div className="card-info-title">
-                    <h3>Other</h3>
-                    <h4>Washing Money.</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="grid grid-cols-3 gap-10">
+          <div class="w-[400px] h-[300px]">
+          <div  className="p-4">
+          <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Automation Solutions</div>
+          <div className="text-zinc-400">
+            <div><strong className='text-white'>Automate Work with Any Site:</strong> Custom automation scripts and tools to streamline your online interactions, saving time and reducing errors. Perfect for e-commerce, data entry, and more.</div>
+            <div className='mt-4'><strong className='text-white'>Custom Workflow Automation:</strong> Tailored solutions to automate your specific business processes, increasing efficiency and productivity.</div>
           </div>
         </div>
+          </div>
+          
+          <div class="w-[400px] h-[300px]">
+            <div  className="p-4">
+            <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">AI Development</div>
+            <div className="text-zinc-400">
+              <div className='mb-4'><strong className='text-white'>AI Agents Development:</strong> Create intelligent agents for various applications, from customer service bots to advanced analytical tools.</div>
+              <div><strong className='text-white'>Conversational Agents:</strong>  Interactive AI that can engage customers, answer queries, and provide support, enhancing user experience.</div>
+            </div>
+          </div>
+          </div>
+          <div class="w-[400px] h-[300px]">
+            <div  className="p-4">
+            <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Knowledge and Content Services</div>
+            <div className="text-zinc-400">
+              <div><strong className='text-white'>Knowledge Base Q&A:</strong> Develop AI-powered question-and-answer systems for customer support or internal knowledge management.</div>
+              <div className='mt-4'><strong>AI Summarization:</strong> Get quick, accurate summaries of large documents or datasets, ideal for research, reporting, and analysis.</div>
+            </div>
+          </div>
+          </div>
+          <div class="w-[400px] h-[300px]">
+            <div  className="p-4">
+            <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">AI Development</div>
+            <div className="text-zinc-400">
+              <div className='mb-4'><strong className='text-white'>Custom AI Models:</strong> Custom Large Language Models (LLM).</div>
+              <div><strong className='text-white'>Custom Image Generative Model:</strong>  Unique AI models for creating specific styles or types of images, useful in design, marketing, and more.</div>
+            </div>
+          </div>
+          </div>
+          <div class="w-[400px] h-[300px]">
+            <div  className="p-4">
+            <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Data Management</div>
+            <div className="text-zinc-400">
+              <div><strong className='text-white'>Data Scraping:</strong> Extract and utilize data from the web or other sources. This service is essential for market research, competitor analysis, and data-driven decision-making.</div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="w-[400px] h-[300px]"> 
+            <div className="p-4">
+            <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Consultation Services</div>
+            <div className="text-zinc-400">
+              <strong className='text-white'>Expert Consultations:</strong> Receive personalized advice to identify and implement the most effective AI solutions. Ideal for businesses looking to modernize processes or solve complex problems with AI.
+            </div>
+         </div>
+        </div>
+      </div>
+        {/* 
+        <div className='z-30'>
+         
+       
+        
+       
+        
+      
+        <div  className="p-4">
+          <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">AI Modalities</div>
+          <div className="text-zinc-400">
+            <div><strong>Text-to-Image:</strong> Turn text descriptions into images, great for creative industries, advertising, and media.</div>
+            <div><strong>Text-to-Voice:</strong> Convert text into natural speech for accessibility, content creation, or customer service.</div>
+            <div><strong>Voice-to-Text:</strong> Accurate speech-to-text services for transcription, documentation, and more.</div>
+            <div><strong>Image-to-Text:</strong> Extract and interpret text from images for data entry, archiving, and analysis.</div>
+            <div><strong>Text-to-Text:</strong> Sophisticated text modification, including translation, paraphrasing, and summarization.</div>
+            <div><strong>Text-to-Video:</strong> Create engaging video content directly from text inputs, ideal for social media, marketing, and educational content.</div>
+          </div>
+        </div>
+        </div> */}
       </div>
     </section>
   );
