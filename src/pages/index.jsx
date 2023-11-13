@@ -32,7 +32,7 @@ const App = () => {
         <Team />
       </LazyShow>
        */}
-      <div className='hidden md:flex'>
+      <div className='hidden md:flex justify-center items-center'>
       <LazyShow>
           <Services />
       </LazyShow>

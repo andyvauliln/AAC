@@ -198,6 +198,7 @@ const ThreeScene = () => {
       controls.enablePan = false;
       controls.enableDamping = true;
       controls.autoRotate = true;
+      controls.enableRotate = false;
       controls.autoRotateSpeed *= 0.25;
       
       
@@ -359,7 +360,7 @@ const calculateFoV = (screenWidth) => {
   const min_width = 350;
   const max_width = 1744;
   const min_fov = 70;
-  const max_fov = 90;
+  const max_fov = 150;
 
   const clampedWidth = Math.max(min_width, Math.min(max_width, screenWidth));
   return min_fov + (max_fov - min_fov) * (clampedWidth - min_width) / (max_width - min_width);

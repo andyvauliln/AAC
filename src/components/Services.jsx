@@ -39,7 +39,7 @@ const Services = () => {
             <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Knowledge and Content Services</div>
             <div className="text-zinc-400">
               <div><strong className='text-white'>Knowledge Base Q&A:</strong> Develop AI-powered question-and-answer systems for customer support or internal knowledge management.</div>
-              <div className='mt-4'><strong>AI Summarization:</strong> Get quick, accurate summaries of large documents or datasets, ideal for research, reporting, and analysis.</div>
+              <div className='mt-4'><strong className='text-white'>AI Summarization:</strong> Get quick, accurate summaries of large documents or datasets, ideal for research, reporting, and analysis.</div>
             </div>
           </div>
           </div>

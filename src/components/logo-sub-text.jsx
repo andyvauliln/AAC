@@ -41,7 +41,7 @@ function LogoSubText() {
           tag="p"
           className={`${roboto2.className} mast__text text-2xl`}
         >
-        A Place for People Who Value Their Time and Embrace the Future
+        A place for people who value their time and embrace the future
         </Spanizer>
         <hr className="sep" />
         <Spanizer tag="p" className={`${roboto2.className} mast__text text-md`}>

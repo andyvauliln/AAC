@@ -194,7 +194,7 @@ const LineAnimation = () => {
 function MainHero() {
   return (
     <>
-    <div className='h-[100vh] w-[100vw] relative flex items-center justify-center'>
+    <div className='h-[100vh] w-[100vw] min-h-[900px] relative flex items-center justify-center'>
     <LineAnimation/>
     <div className='w-full h-full flex items-center justify-center'>
       <div className='w-1/3 hidden md:flex md:flex-col md:justify-center md:items-center'>
