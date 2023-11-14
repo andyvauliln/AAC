@@ -5,12 +5,12 @@ const Services = () => {
   return (
     <section className={`mast py-8 h-auto md:h-[100vh]`} id="product">
       {/* <figure
-        className="mast__bg hidden md:block"
+        className="mast__bg2 hidden md:block"
         style={{
-          backgroundImage: 'url(/images/bg4.jpeg)',
+          backgroundImage: 'url(/images/pink_bg.jpeg)',
         }}
       ></figure> */}
-      <div className="flex flex-col  items-center justify-center w-full h-full">
+      <div className="flex flex-col z-10  items-center justify-center w-full h-full">
         <div className="stars cursor-pointer underline underline-offset-8 z-10 text-4xl md:text-6xl mb-16">
           Services
         </div>
