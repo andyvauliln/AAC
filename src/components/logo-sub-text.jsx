@@ -51,7 +51,7 @@ function LogoSubText() {
           tag="p"
           className={`${roboto2.className} mast__text text-3xl mt-8`}
         >
-          Book Free Consultation (+6281338571519 )
+          Book Free Consultation +6281338571519
         </Spanizer>
 
         {/* <div className="container social-wrapper">

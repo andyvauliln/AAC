@@ -14,8 +14,8 @@ const Services = () => {
         <div className="stars cursor-pointer underline underline-offset-8 z-10 text-4xl md:text-6xl mb-16">
           Services
         </div>
-        <div class="grid grid-cols-3 gap-10">
-          <div class="w-[400px] h-[300px]">
+        <div className="grid grid-cols-3 gap-10">
+          <div className="w-[400px] h-[300px]">
           <div  className="p-4">
           <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Automation Solutions</div>
           <div className="text-zinc-400">
@@ -25,7 +25,7 @@ const Services = () => {
         </div>
           </div>
           
-          <div class="w-[400px] h-[300px]">
+          <div className="w-[400px] h-[300px]">
             <div  className="p-4">
             <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">AI Development</div>
             <div className="text-zinc-400">
@@ -34,7 +34,7 @@ const Services = () => {
             </div>
           </div>
           </div>
-          <div class="w-[400px] h-[300px]">
+          <div className="w-[400px] h-[300px]">
             <div  className="p-4">
             <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Knowledge and Content Services</div>
             <div className="text-zinc-400">
@@ -43,7 +43,7 @@ const Services = () => {
             </div>
           </div>
           </div>
-          <div class="w-[400px] h-[300px]">
+          <div className="w-[400px] h-[300px]">
             <div  className="p-4">
             <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">AI Development</div>
             <div className="text-zinc-400">
@@ -52,7 +52,7 @@ const Services = () => {
             </div>
           </div>
           </div>
-          <div class="w-[400px] h-[300px]">
+          <div className="w-[400px] h-[300px]">
             <div  className="p-4">
             <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Data Management</div>
             <div className="text-zinc-400">
@@ -61,7 +61,7 @@ const Services = () => {
           </div>
           </div>
           
-          <div class="w-[400px] h-[300px]"> 
+          <div className="w-[400px] h-[300px]"> 
             <div className="p-4">
             <div className="mb-4 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Consultation Services</div>
             <div className="text-zinc-400">
