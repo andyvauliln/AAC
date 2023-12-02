@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-
+import Spanizer from "./Spanizer"
 import { Playfair_Display, Nunito } from 'next/font/google';
 
 const roboto2 = Playfair_Display({
@@ -13,46 +13,29 @@ const roboto1 = Nunito({
   subsets: ['latin'],
 });
 
-const Spanizer = ({ tag: Tag = 'div', className, children }) => {
-  const ref = useRef(null);
 
-  useEffect(() => {
-    if (ref.current) {
-      const text = ref.current.textContent;
-      ref.current.textContent = '';
-      text.split('').forEach((char) => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.className = 'text-white';
-        ref.current.appendChild(span);
-      });
-    }
-  }, [children]);
-
-  return React.createElement(Tag, { className, ref }, children);
-};
 
 function LogoSubText() {
   return (
     <>
       {/* <h1 className={`${roboto.className} gold-text2 text-2xl text-center text-yellow-400 mb-20 z-20 absolute left-1/2 -translate-x-1/2 top-[15%]`}>Law Firm & Speakeasy Bar</h1> */}
-      <div className="text-center mt-6 px-4">
+      <div data-aos="zoom-in"  className="text-center mt-6 px-4">
         <Spanizer
           tag="p"
           className={`${roboto2.className} mast__text text-2xl`}
         >
-        A place for people who value their time and embrace the future
+        A place for people who value they time
         </Spanizer>
         <hr className="sep" />
         <Spanizer tag="p" className={`${roboto2.className} mast__text text-md`}>
           Designing Custom Automation Solutions with AI
         </Spanizer>
-        <Spanizer
+        {/* <Spanizer
           tag="p"
           className={`${roboto2.className} mast__text text-3xl mt-8`}
         >
           Book Free Consultation +6281338571519
-        </Spanizer>
+        </Spanizer> */}
 
         {/* <div className="container social-wrapper">
           <div className="flex flex-col md:flex-row">

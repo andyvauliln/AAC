@@ -5,6 +5,8 @@ import LogoText from './logo-sub-text'
 import { Roboto_Slab } from 'next/font/google';
 import Testimonials from './testimonials';
 import TestimonialsMobile from './testimonials2';
+import Image from "next/image"
+import Header from '../components/Header';
 
 const font = Roboto_Slab({
   weight: '900',
@@ -194,10 +196,11 @@ const LineAnimation = () => {
 function MainHero() {
   return (
     <>
-    <div className='h-[100vh] w-[100vw] min-h-[900px] relative flex items-center justify-center'>
+    <div className='h-[100vh] lg:h-[100vh] w-[100vw] relative flex items-center justify-center'>
+    <Header/>
     <LineAnimation/>
     <div className='w-full h-full flex items-center justify-center'>
-      <div className='w-1/3 hidden md:flex md:flex-col md:justify-center md:items-center'>
+      <div className='w-1/3 hidden lg:flex lg:flex-col lg:justify-center lg:items-center'>
       <div  className="p-4 z-30 max-w-[400px] ">
         <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Preparation for YouTube Interviews</div>
         <div className="text-zinc-400">
@@ -217,16 +220,12 @@ function MainHero() {
         </div>
       </div>
       </div>
-      <div className='w-full md:w-1/3 flex items-center justify-center relative flex-col '>
-        
-        {/* <div className={`${font.className} text-[135px] z-10 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent`}>Area</div> */}
-        {/* <div className={`${font.className} text-[135px] z-10 stars`}>Area</div> */}
-        <div className={`${font.className} stars  text-white  text-[100px] opacity-70 z-20 mb-[40px]`}>Area X</div>
+      <div className='w-full h-full lg:h-[100vh] lg:w-1/3 flex items-center justify-center relative flex-col '>
         <Logo/>
         <LogoText/> 
         
       </div>
-      <div className='w-1/3 hidden md:flex md:flex-col md:justify-center md:items-center'>
+      <div className='w-1/3 hidden lg:flex lg:flex-col md:justify-center md:items-center'>
       <div className="p-4 z-30 max-w-[400px]">
         <div className="to-purple-600 via-pink-600 from-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Property Management AI Agent</div>
         <div className="text-zinc-400">
@@ -254,11 +253,4 @@ function MainHero() {
   );
 }
 
-function Text(){
-  return (<div>
-    
-  </div>)
-}
-
 export default MainHero;
-//className="absolute top-0 left-0 w-full h-full"

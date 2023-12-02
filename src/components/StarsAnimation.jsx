@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 
 const Z_RANGE = 100; // How deep is your love
-const Z_VELOCITY = -0.0025; // How fast
-const STARS_COUNT = 2000; // How many
+const Z_VELOCITY = -0.0015; // How fast
+const STARS_COUNT = 100; // How many
 
 class Star {
   constructor() {
@@ -18,24 +18,19 @@ class Star {
     this.angle = 0.001;
   }
 
-  getPosition() {
+  getPosition(canvasWidth, canvasHeight) {
     this.x = this.x * Math.cos(this.angle) - this.y * Math.sin(this.angle);
     this.y = this.y * Math.cos(this.angle) + this.x * Math.sin(this.angle);
     this.z += Z_VELOCITY;
 
-    this.xPos =
-      ((window.innerHeight / window.innerWidth) * window.innerWidth * this.x) /
-      this.z +
-      window.innerWidth / 2;
-    this.yPos = (window.innerHeight * this.y) / this.z + window.innerHeight / 2;
+    this.xPos = (canvasWidth * this.x) / this.z + canvasWidth / 2;
+    this.yPos = (canvasHeight * this.y) / this.z + canvasHeight / 2;
 
-    // Detect collision with black hole
     if (
       Math.sqrt(
         (this.xPos - HOLE.x) * (this.xPos - HOLE.x) +
         (this.yPos - HOLE.y) * (this.yPos - HOLE.y)
-      ) <= HOLE.r ||
-      this.z >= Z_RANGE
+      ) <= HOLE.r || this.z >= Z_RANGE
     )
       this.reset();
   }
@@ -62,62 +57,65 @@ const HOLE = {
 
 const StarsAnimation = () => {
   const canvasRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     // Check if the code is running on the client side
-    if (typeof window !== 'undefined') {
-      HOLE.x = window.innerWidth / 2;
-      HOLE.y = window.innerHeight / 2;
-      HOLE.r =
-        window.innerWidth > window.innerHeight
-          ? window.innerHeight / 4
-          : window.innerWidth / 4;
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.clientWidth;
+      const containerHeight = containerRef.current.clientHeight;
+
+      HOLE.x = containerWidth / 2;
+      HOLE.y = containerHeight / 2;
+      HOLE.r = containerWidth > containerHeight ? containerHeight / 4 : containerWidth / 4;
 
       const canvas = canvasRef.current;
+      canvas.width = containerWidth;
+      canvas.height = containerHeight;
       const ctx = canvas.getContext('2d');
 
+      const updateCanvasSize = () => {
+        const containerWidth = containerRef.current.clientWidth;
+        const containerHeight = containerRef.current.clientHeight;
+        canvasRef.current.width = containerWidth;
+        canvasRef.current.height = containerHeight;
+        HOLE.x = containerWidth / 2;
+        HOLE.y = containerHeight / 2;
+        HOLE.r = Math.min(containerWidth, containerHeight) / 4;
+      };
+  
+      const handleResize = () => {
+        updateCanvasSize();
+        animate();
+      };
+  
       const animate = () => {
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        ctx.beginPath();
-        ctx.fillStyle = 'white';
+  
         stars.forEach((star) => {
-          star.getPosition();
+          star.getPosition(canvas.width, canvas.height);
           star.draw(ctx);
         });
-        ctx.fill();
-
+  
         requestAnimationFrame(animate);
       };
-
+  
+      window.addEventListener('resize', handleResize);
+      updateCanvasSize();
       animate();
-
-      function handleResize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        HOLE.r =
-          window.innerWidth > window.innerHeight
-            ? window.innerHeight / 4
-            : window.innerWidth / 4;
-        HOLE.x = window.innerWidth / 2;
-        HOLE.y = window.innerHeight / 2;
-      }
-      handleResize();
-
-      window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        HOLE.r =
-          window.innerWidth > window.innerHeight
-            ? window.innerHeight / 4
-            : window.innerWidth / 4;
-        HOLE.x = window.innerWidth / 2;
-        HOLE.y = window.innerHeight / 2;
-      });
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
     }
-  }, []);
+    }, []);
 
-  return <canvas ref={canvasRef} />;
+  return <div ref={containerRef} className='w-full h-full'>
+  <canvas ref={canvasRef} className='w-full h-full' />
+</div>
 };
 
 export default StarsAnimation;
+{/* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> */}

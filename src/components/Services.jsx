@@ -4,12 +4,12 @@ import Image from "next/image"
 const Services = () => {
   return (
     <section className={`mast py-8 h-auto md:h-[100vh]`} id="product">
-      {/* <figure
-        className="mast__bg2 hidden md:block"
+      <figure
+        className="mast__bg2 hidden md:block opacity-20"
         style={{
-          backgroundImage: 'url(/images/pink_bg.jpeg)',
+          backgroundImage: 'url(/images/bg_purple2.webp)',
         }}
-      ></figure> */}
+      ></figure>
       <div className="flex flex-col z-10  items-center justify-center w-full h-full">
         <div className="stars cursor-pointer underline underline-offset-8 z-10 text-4xl md:text-6xl mb-16">
           Services

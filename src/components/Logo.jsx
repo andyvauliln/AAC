@@ -8,9 +8,6 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 
 
-
-
-
 const ThreeScene = () => {
     const canvasRef = useRef(null);
 
@@ -341,8 +338,9 @@ const ThreeScene = () => {
 
   }, []);
 
-    return <canvas ref={canvasRef} className='z-10 w-[400px] h-[400px]' />;
+    return <canvas ref={canvasRef} className='z-10 w-[320px] h-[320px] mt-20% lg:my-[20%]' />;
 };
+
 
 export default ThreeScene;
 
@@ -359,7 +357,7 @@ function cleanMaterial(material) {
 const calculateFoV = (screenWidth) => {
   const min_width = 350;
   const max_width = 1744;
-  const min_fov = 70;
+  const min_fov = 110;
   const max_fov = 90;
 
   const clampedWidth = Math.max(min_width, Math.min(max_width, screenWidth));
