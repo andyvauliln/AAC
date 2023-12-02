@@ -16,13 +16,7 @@ export const getURL = (path = "", from = "test") => {
     return url;
 };
 
-export const postData = async ({
-    url,
-    data,
-}: {
-    url: string;
-    data?: { price: Price };
-}) => {
+export const postData = async ({ url, data }: { url: string; data?: any }) => {
     console.log(url, "postData");
     console.log(data, "postData");
 
