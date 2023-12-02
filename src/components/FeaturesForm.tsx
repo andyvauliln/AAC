@@ -2,7 +2,7 @@
 // @ts-nocheck
 'use client'
 import Spinner from './Spinner';
-import { toast } from '../hooks/use-toast';
+//import { toast } from '../hooks/use-toast';
 import { getURL, postData } from '../utils/helpers';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
@@ -43,19 +43,19 @@ export default function FeedbackForm() {
     onError: (err) => {
       console.log('err', err);
 
-      toast({
-        title: 'There was an error.',
-        description: 'Something went wrong, try resubmit',
-        variant: 'destructive',
-      })
+      // toast({
+      //   title: 'There was an error.',
+      //   description: 'Something went wrong, try resubmit',
+      //   variant: 'destructive',
+      // })
     },
     onSuccess: () => {
       console.log('success');
-      toast({
-        title: 'Success',
-        description: 'Your message submited successfuly and ll be reviewed by our team. We ll reach you as soon as possible',
-        variant: 'destructive',
-      })
+      // toast({
+      //   title: 'Success',
+      //   description: 'Your message submited successfuly and ll be reviewed by our team. We ll reach you as soon as possible',
+      //   variant: 'destructive',
+      // })
     },
   })
 
