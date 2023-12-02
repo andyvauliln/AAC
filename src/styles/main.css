@@ -9,7 +9,9 @@
   --color-tertiaty: #99a0a3;
 }
 
-
+canvas {
+  pointer-events: none;
+}
 
 .content p {
   @apply my-6;
