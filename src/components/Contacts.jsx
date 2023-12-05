@@ -33,7 +33,7 @@ function Ball() {
               <div className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 border-l-[13vw] border-r-[13vw] border-t-[18vw] lg:border-l-[5.5vw] lg:border-r-[5.5vw] lg:border-t-[8.75vw] border-t-[#bf3fce] blur-[5px] border-l-transparent border-r-transparent"></div>
               <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-[50%] w-[10vw]">
                   <div className="mirror" data-text="Never try, never know">
-                      <div className='text-center mx-auto'>Never try never <br/> know</div>
+                      <div className='text-center mx-auto'>Never try <br/> never <br/> know</div>
                   </div>
               </div>
             </div>
@@ -47,7 +47,7 @@ function Ball() {
 function SocialMedia() {
   return (<div className='flex w-full flex-col'>
     <div className='flex w-full justify-between my-5'>
-      <div className="stars text-2xl md:text-3xl mr-8">
+      <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent font-extrabold text-2xl md:text-3xl mr-8">
         Follow Us:
       </div>
       <div>
@@ -63,7 +63,7 @@ function SocialMedia() {
       </div>
     </div>
     <div className='flex w-full  justify-between  my-10'>
-      <div className="stars text-2xl md:text-3xl">
+      <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent font-extrabold text-2xl md:text-3xl">
         Message Us:
       </div>
       <div>
@@ -75,7 +75,7 @@ function SocialMedia() {
         </a>
       </div>
     </div>
-    <div className="stars text-2xl md:text-3xl mr-8">
+    <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent  font-extrabold text-2xl md:text-3xl mr-8">
         Or Leave us a Message:
       </div>
   </div>)

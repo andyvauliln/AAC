@@ -3,6 +3,7 @@ import Image from "next/image"
 
 const Services = () => {
   return (
+    <div className='hidden md:flex justify-center items-center'>
     <section className={`mast py-8 h-auto md:h-[100vh]`} id="product">
       <figure
         className="mast__bg2 hidden md:block opacity-20"
@@ -11,7 +12,7 @@ const Services = () => {
         }}
       ></figure>
       <div className="flex flex-col z-10  items-center justify-center w-full h-full">
-        <div className="stars cursor-pointer underline underline-offset-8 z-10 text-4xl md:text-6xl mb-16">
+        <div className="stars z-10 text-4xl md:text-6xl mb-16">
           Services
         </div>
         <div className="grid grid-cols-3 gap-10">
@@ -92,6 +93,7 @@ const Services = () => {
         </div> */}
       </div>
     </section>
+    </div>
   );
 };
 

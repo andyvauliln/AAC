@@ -33,9 +33,12 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
-    <div className='w-full h-full bg-black' >
+    <div className='w-full h-full bg-black overflow-auto' >
      
       <MainHero />
+      
+      <Services />
+      <Contacts />
 {/*       
       <LazyShow>
         <Team />

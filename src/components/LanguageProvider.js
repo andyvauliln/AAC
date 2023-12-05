@@ -3,9 +3,30 @@ import ReactDOM from 'react-dom';
 
 // Language data
 const languages = {
-  EN: { data: { company_title: "AI AUTOMATION AGENCY" }, currentLng: "EN" },
-  IND: { data: { company_title: "AI AUTOMATI AGENCY" }, currentLng: "IND" },
-  RU: { data: { company_title: "ИИ АГЕНСТВО" }, currentLng: "RU" },
+  EN: {
+    data: {
+      company_title: "AI AUTOMATION AGENCY",
+      company_tag_line: "A place for people who value they time",
+      company_what_we_doing: "Designing Custom Automation Solutions with AI",
+    },
+    currentLng: "EN"
+  },
+  IND: {
+    data: {
+      company_title: "AI AUTOMATI AGENCY",
+      company_tag_line: "A place for people who value they time",
+      company_what_we_doing: "Designing Custom Automation Solutions with AI",
+    },
+    currentLng: "IND"
+  },
+  RU: {
+    data: {
+      company_title: "ИИ АГЕНСТВО",
+      company_tag_line: "Место для людей кто ищет эффективности",
+      company_what_we_doing: "Разработка частных ИИ решений для бизнеса",
+    },
+    currentLng: "RU"
+  },
 };
 
 // Create a Context for the language

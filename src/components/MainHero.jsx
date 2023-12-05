@@ -196,61 +196,71 @@ const LineAnimation = () => {
 function MainHero() {
   return (
     <>
-    <div className='h-[100vh] lg:h-[100vh] w-[100vw] relative flex items-center justify-center'>
-    <Header/>
-    <LineAnimation/>
-    <div className='w-full h-full flex items-center justify-center'>
-      <div className='w-1/3 hidden lg:flex lg:flex-col lg:justify-center lg:items-center'>
-      <div  className="p-4 z-30 max-w-[400px] ">
-        <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Preparation for YouTube Interviews</div>
-        <div className="text-zinc-400">
-          Our AI tool helped a YouTube channel host prepare for interviews. It finds what questions were asked in past interviews on YouTube and other websites. This helps the host know what to ask next and avoid repeating questions
-        </div>
-      </div>
-      <div  className="p-4 z-30 max-w-[400px]">
-        <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Company Social Media AI Agent</div>
-        <div className="text-zinc-400">
-          Our AI helps with social media like Instagram and Twitter. It finds and shares interesting information and makes unique images using AI.
-        </div>
-      </div>
-      <div  className="p-4 z-30 max-w-[400px]">
-        <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Discord Community AI Agent</div>
-        <div className="text-zinc-400">
-          Our AI helps manage Discord communities. It finds and shares news, answers questions, summarizes daily messages, creates fun activities, sorts messages for different actions, and gives advice to the community leader based on data and statistics
-        </div>
-      </div>
-      </div>
-      <div className='w-full h-full lg:h-[100vh] lg:w-1/3 flex items-center justify-center relative flex-col '>
-        <Logo/>
-        <LogoText/> 
-        
-      </div>
-      <div className='w-1/3 hidden lg:flex lg:flex-col md:justify-center md:items-center'>
-      <div className="p-4 z-30 max-w-[400px]">
-        <div className="to-purple-600 via-pink-600 from-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Property Management AI Agent</div>
-        <div className="text-zinc-400">
-          A customer managing 70 properties saved lots of time with our AI Automation. It checks other property prices and suggests the best prices for his properties. It also replies to messages about availability, helps find the right apartments for tenants, checks payments, organizes cleaning, sends contracts, and makes monthly reports
-        </div>
-      </div>
-      
-      <div  className="p-4 z-30 max-w-[400px]">
-        <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Land Search AI Agent</div>
-        <div className="text-zinc-400">
-          We made an AI tool for a client who needed help finding land. The AI gets information about who owns land from the land office and contacts the owner to see if they want to sell and how much they want.
-        </div>
-      </div>
-      <div  className="p-4 z-30 max-w-[400px]">
-        <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">News Aggregation and Summarization</div>
-        <div className="text-zinc-400">
-          A customer needed to know the latest news about their business and additional information from special sources. Our AI collects all the information related to their business and makes short summaries to keep them updated every day.
-        </div>
-      </div>
-      </div>
-      </div>
+    <div className='min-h-[100vh] min-w-[100vw] relative flex flex-col items-center justify-around p-6'>
+      <Header/>
+      <LineAnimation/>
+      <div className='h-40vh w-full'>&nbsp;</div>
+      <Logo/>
+      <LogoText/> 
     </div>
-    <TestimonialsMobile/>
+    
+      <TestimonialsMobile/>
     </>
   );
 }
 
 export default MainHero;
+
+
+// <div className='h-[100vh] lg:h-[100vh] w-[100vw] relative flex items-center justify-center'>
+//     <Header/>
+//     <LineAnimation/>
+//     <div className='w-full h-full flex items-center justify-center'>
+//       <div className='w-1/3 hidden lg:flex lg:flex-col lg:justify-center lg:items-center'>
+//       <div  className="p-4 z-30 max-w-[400px] ">
+//         <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Preparation for YouTube Interviews</div>
+//         <div className="text-zinc-400">
+//           Our AI tool helped a YouTube channel host prepare for interviews. It finds what questions were asked in past interviews on YouTube and other websites. This helps the host know what to ask next and avoid repeating questions
+//         </div>
+//       </div>
+//       <div  className="p-4 z-30 max-w-[400px]">
+//         <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Company Social Media AI Agent</div>
+//         <div className="text-zinc-400">
+//           Our AI helps with social media like Instagram and Twitter. It finds and shares interesting information and makes unique images using AI.
+//         </div>
+//       </div>
+//       <div  className="p-4 z-30 max-w-[400px]">
+//         <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Discord Community AI Agent</div>
+//         <div className="text-zinc-400">
+//           Our AI helps manage Discord communities. It finds and shares news, answers questions, summarizes daily messages, creates fun activities, sorts messages for different actions, and gives advice to the community leader based on data and statistics
+//         </div>
+//       </div>
+//       </div>
+//       <div className='w-full h-full lg:h-[100vh] lg:w-1/3 flex items-center justify-center relative flex-col '>
+//         <Logo/>
+//         <LogoText/> 
+        
+//       </div>
+//       <div className='w-1/3 hidden lg:flex lg:flex-col md:justify-center md:items-center'>
+//       <div className="p-4 z-30 max-w-[400px]">
+//         <div className="to-purple-600 via-pink-600 from-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Property Management AI Agent</div>
+//         <div className="text-zinc-400">
+//           A customer managing 70 properties saved lots of time with our AI Automation. It checks other property prices and suggests the best prices for his properties. It also replies to messages about availability, helps find the right apartments for tenants, checks payments, organizes cleaning, sends contracts, and makes monthly reports
+//         </div>
+//       </div>
+      
+//       <div  className="p-4 z-30 max-w-[400px]">
+//         <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">Land Search AI Agent</div>
+//         <div className="text-zinc-400">
+//           We made an AI tool for a client who needed help finding land. The AI gets information about who owns land from the land office and contacts the owner to see if they want to sell and how much they want.
+//         </div>
+//       </div>
+//       <div  className="p-4 z-30 max-w-[400px]">
+//         <div className="from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r background-animate bg-clip-text text-transparent text-xl font-extrabold">News Aggregation and Summarization</div>
+//         <div className="text-zinc-400">
+//           A customer needed to know the latest news about their business and additional information from special sources. Our AI collects all the information related to their business and makes short summaries to keep them updated every day.
+//         </div>
+//       </div>
+//       </div>
+//       </div>
+//     </div>

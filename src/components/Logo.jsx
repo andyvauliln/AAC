@@ -338,7 +338,7 @@ const ThreeScene = () => {
 
   }, []);
 
-    return <canvas ref={canvasRef} className='z-10 w-[320px] h-[320px] mt-20% lg:my-[20%]' />;
+    return <canvas ref={canvasRef} className='z-10 w-[320px] h-[320px]'/>;
 };
 
 
