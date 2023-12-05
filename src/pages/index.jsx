@@ -36,22 +36,23 @@ const App = () => {
     <div className='w-full h-full bg-black overflow-auto' >
      
       <MainHero />
-      
-      <Services />
+      <div className='hidden md:flex justify-center items-center'>
+        <Services />
+      </div>
       <Contacts />
 {/*       
       <LazyShow>
         <Team />
       </LazyShow> */}
        
-      <div className='hidden md:flex justify-center items-center'>
+      {/* <div className='hidden md:flex justify-center items-center'>
       <LazyShow>
           <Services />
       </LazyShow>
-      </div> 
-      <LazyShow>
+      </div>  */}
+      {/* <LazyShow>
         <Contacts />
-      </LazyShow>
+      </LazyShow> */}
       <Analytics />
     </div>
     </LanguageProvider>
